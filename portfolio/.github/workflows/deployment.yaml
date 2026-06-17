@@ -1,4 +1,4 @@
-name: Deployment of DevOps
+name: Deployment of DevOps project
 
 on:
   push:
@@ -13,13 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: deploy via SSH
+      - name: Deployment via ssh
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          script:
-            - cd /home/vivek_vidyamandir/DevOps/my-app-devops/portfolio
-            - git pull
-            - docker conmpose up -d
+
+          script: |
+            cd /home/vivek_vidyamandir/DevOps/my-app-devops/portfolio
+            git pull
+            docker compose up -d
