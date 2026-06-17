@@ -22,5 +22,6 @@ jobs:
 
           script: |
             cd /home/vivek_vidyamandir/DevOps/my-app-devops/portfolio
-            git pull
-            docker compose up -d
+            docker compose down
+            git pull origin master
+            docker compose up -d --build
