@@ -24,7 +24,7 @@ jobs:
         with:
           args: >
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-            -Dsonar.projectKey="${{secrets.PROJECT_KEY}}"
+            -Dsonar.projectKey=${{secrets.PROJECT_KEY}}
             -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
            
  
